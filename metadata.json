@@ -1,0 +1,6 @@
+{
+  "name": "Oracle of Olympus",
+  "description": "Scan your face to discover your inner Greek God or Goddess. Includes divine descriptions, personality traits, and career recommendations.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}

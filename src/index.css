@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=Space+Mono:wght@400;700&family=Inter:wght@400;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'God Of War';
+  src: url('./assets/fonts/GODOFWAR.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", "Cinzel", serif;
+  --font-display: "Cinzel Decorative", "Cinzel", serif;
+  --font-gow: "God Of War", "Cinzel Decorative", serif;
+  --font-mono: "Space Mono", monospace;
+
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D5A3;
+  --color-gold-dark: #8B6914;
+  --color-cream: #FAF6EE;
+  --color-dark: #1A1610;
+  --color-dark-mid: #2D2519;
+  --color-accent: #7B3F1A;
+  --color-text-muted: #6B5D45;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-cream antialiased font-serif min-h-screen overflow-x-hidden;
+  }
+}
+
+@keyframes rotateRays {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate(30px, -40px) scale(1.1); opacity: 1; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+}
+
+@keyframes pulse-guide {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.02); }
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+.bg-animation-container {
+  @apply fixed inset-0 z-0 pointer-events-none overflow-hidden;
+}
+
+.god-rays {
+  @apply absolute top-1/2 left-1/2 w-[250vmax] h-[250vmax] pointer-events-none;
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 10deg,
+    rgba(201, 168, 76, 0.025) 10deg 20deg
+  );
+  animation: rotateRays 90s linear infinite;
+}
+
+.orb {
+  @apply absolute rounded-full blur-[80px] pointer-events-none;
+  animation: floatOrb 12s ease-in-out infinite;
+}
+
+.face-guide {
+  @apply absolute top-1/2 left-1/2 w-[180px] h-[240px] border-2 border-dashed border-gold/30 rounded-full pointer-events-none;
+  transform: translate(-50%, -50%);
+  animation: pulse-guide 2s ease-in-out infinite;
+}
+
+.scan-line {
+  @apply absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-70 pointer-events-none;
+  animation: scan 2s linear infinite;
+}
