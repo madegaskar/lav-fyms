@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="LAV - Fin Your Mythic Soul.png" alt="Find Your Mythic Soul Banner" width="100%">
+  <img src="src/LAV%20-%20Find%20Your%20Mythic%20Soul.png" alt="Find Your Mythic Soul Banner" width="100%">
   
   <br>
 
