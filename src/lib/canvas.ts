@@ -277,7 +277,7 @@ export async function generatePortrait(result: ScanResult, matchedGod: {name: st
   });
 
   // 6. Career Section
-  const careerY = 1625;
+  const careerY = 1648;
   ctx.textAlign = "center";
   ctx.fillStyle = "#d4af37";
   ctx.font = "bold 26px 'Inter', sans-serif";
